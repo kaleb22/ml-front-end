@@ -7,9 +7,21 @@
       name="search-bar"
       type="text"
       placeholder="Nunca dejes de buscar"
+      (keyup.enter)="search()"
+      [formControl]="input"
     />
     <button class="header__button">
-      <img src="/assets/ic_Search.png" width="16px" height="16px" />
+      <img
+        (click)="search()"
+        aria-label="click here to search for the term entered"
+        src="/assets/ic_Search.png"
+        width="16px"
+        height="16px"
+      />
     </button>
   </div>
 </div>
+
+@if (searchResults$ | async; as results) {
+  <p>results: {{ results }}</p>
+}
