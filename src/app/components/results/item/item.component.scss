@@ -1,10 +1,10 @@
 .item {
-  border-bottom: solid 1px #eeeeee;
   margin-top: 1rem;
   margin-bottom: 1rem;
   display: grid;
   gap: 1rem;
   grid-template-columns: 12.25rem 1fr 1fr;
+  cursor: pointer;
 
   &__img {
     width: 11.25rem;
@@ -22,11 +22,23 @@
     font-size: 1.5rem;
   }
 
+  &__title {
+    font-size: 1.125rem;
+  }
+
   &__location {
+    margin-top: 1rem;
     font-size: 0.75rem;
+    text-align: center;
   }
 }
 
-.item > :last-child {
-  border-bottom: none;
+.border {
+  border-bottom: solid 1px #eeeeee;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.border > :last-child {
+  border: none;
 }

@@ -10,4 +10,8 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class ItemComponent {
   item = input.required<Item>();
+
+  openDetails(id: string) {
+    console.log(id);
+  }
 }
