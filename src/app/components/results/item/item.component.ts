@@ -1,6 +1,8 @@
-import { Component, input } from '@angular/core';
-import { Item } from '../../../interfaces/search-items.interface';
+import { Component, inject, input } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Router } from '@angular/router';
+
+import { Item } from '../../../interfaces/search-items.interface';
 
 @Component({
   selector: 'app-item',
@@ -11,7 +13,9 @@ import { CurrencyPipe } from '@angular/common';
 export class ItemComponent {
   item = input.required<Item>();
 
+  private router = inject(Router);
+
   openDetails(id: string) {
-    console.log(id);
+    this.router.navigate(['items', id]);
   }
 }

@@ -1,3 +1,29 @@
-<p>item-details works!</p>
-
-{{ id() }}
+@if (searchItemDetails$ | async; as item) {
+  <div class="item-detail">
+    <img class="item-detail__img" [src]="item.picture" />
+    <div class="item-detail__info">
+      <p class="item-detail__condition">
+        {{ item.condition }} - {{ item.sold_quantity }} vendidos
+      </p>
+      <p class="item-detail__title">{{ item.title }}</p>
+      <div class="item-detail__price">
+        <p>
+          {{
+            item.price.amount
+              | currency: item.price.currency : "symbol" : "1.0-0"
+          }}
+        </p>
+        @if (item.price.decimals < 10) {
+          <p class="item-detail__price--decimal">0{{ item.price.decimals }}</p>
+        } @else {
+          <p class="item-detail__price--decimal">{{ item.price.decimals }}</p>
+        }
+      </div>
+      <button class="item-detail__btn">Comprar</button>
+    </div>
+  </div>
+  <div class="item-detail-desc">
+    <p class="item-detail-desc__title">Descripción del producto</p>
+    <p class="item-detail-desc__content">{{ item.description }}</p>
+  </div>
+}
