@@ -1,1 +1,5 @@
-<p>results works!</p>
+@if (searchResults$ | async; as results) {
+  @for (item of results.items; track item.id) {
+    <app-item [item]="item"></app-item>
+  }
+}

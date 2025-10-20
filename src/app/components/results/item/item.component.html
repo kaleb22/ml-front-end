@@ -1,0 +1,23 @@
+<div class="item">
+  <img class="item__img" [src]="item().picture" aria-hidden="true" />
+  <div class="item__title">
+    <div class="item__price">
+      <p>
+        {{
+          item().price.amount
+            | currency: item().price.currency : "symbol" : "1.0-0"
+        }}
+      </p>
+      @if (item().free_shipping) {
+        <img
+          src="/assets/ic_shipping.png"
+          width="16px"
+          height="16px"
+          aria-hidden="true"
+        />
+      }
+    </div>
+    <p>{{ item().title }}</p>
+  </div>
+  <p class="item__location">{{ item().Location }}</p>
+</div>

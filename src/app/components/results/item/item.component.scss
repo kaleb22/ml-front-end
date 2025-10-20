@@ -1,0 +1,32 @@
+.item {
+  border-bottom: solid 1px #eeeeee;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 12.25rem 1fr 1fr;
+
+  &__img {
+    width: 11.25rem;
+    height: 11.25rem;
+    border-radius: 4px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  &__price {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  &__location {
+    font-size: 0.75rem;
+  }
+}
+
+.item > :last-child {
+  border-bottom: none;
+}
