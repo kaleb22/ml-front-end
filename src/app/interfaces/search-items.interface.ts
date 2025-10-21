@@ -6,6 +6,8 @@ export interface SearchItems {
 
 export interface ItemDetails extends Item {
   author: Author;
+  sub_category: string;
+  category: string;
 }
 
 export interface Author {

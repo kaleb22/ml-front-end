@@ -1,3 +1,16 @@
 <app-header />
 
+@if (breadcrumb().length > 0) {
+  <div class="breadcrumb">
+    @for (path of breadcrumb(); track path; let last = $last) {
+      @if (last) {
+        <span style="cursor: text">{{ path }}</span>
+      } @else {
+        <span>{{ path }}</span>
+        <span>></span>
+      }
+    }
+  </div>
+}
+
 <router-outlet />

@@ -1,0 +1,14 @@
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  span {
+    font-size: 0.875rem;
+    font-family: "arial";
+    color: #999999;
+  }
+}
