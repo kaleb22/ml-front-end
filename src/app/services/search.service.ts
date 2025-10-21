@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { map, Subject, switchMap, tap } from 'rxjs';
+import { Subject, switchMap, tap } from 'rxjs';
 
 import { environment } from '../environments/environment';
 import { ItemDetails, SearchItems } from '../interfaces/search-items.interface';

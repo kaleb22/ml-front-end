@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, inject, input } from '@angular/core';
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
-import { tap } from 'rxjs';
 
 import { SearchService } from '../../../services/search.service';
 
@@ -15,9 +14,7 @@ export class ItemDetailsComponent implements AfterViewInit {
 
   private searchService = inject(SearchService);
 
-  searchItemDetails$ = this.searchService.searchItemDetails$.pipe(
-    tap((res) => console.log(res)),
-  );
+  searchItemDetails$ = this.searchService.searchItemDetails$;
 
   ngAfterViewInit(): void {
     this.searchService.triggerItemDetails(this.id());
