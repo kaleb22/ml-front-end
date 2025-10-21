@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, inject, input } from '@angular/core';
+import { AfterViewInit, Component, effect, inject, input } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { tap } from 'rxjs';
 
@@ -15,6 +15,12 @@ export class ResultsComponent implements AfterViewInit {
   private searchService = inject(SearchService);
 
   search = input.required<string>();
+
+  constructor() {
+    effect(() => {
+      this.searchService.triggerSearch(this.search());
+    });
+  }
 
   searchResults$ = this.searchService.searchResults$.pipe(
     tap((res) => console.log(res)),

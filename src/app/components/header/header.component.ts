@@ -14,8 +14,12 @@ export class HeaderComponent {
   input: FormControl = new FormControl<string>('');
 
   search() {
-    this.router.navigate(['/items'], {
-      queryParams: { search: this.input.value },
-    });
+    const searchTerm = this.input.value as string;
+
+    if (searchTerm.trim().length > 0) {
+      this.router.navigate(['/items'], {
+        queryParams: { search: this.input.value },
+      });
+    }
   }
 }
