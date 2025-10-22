@@ -62,10 +62,18 @@ Regarding this theme, here are some thoughts that I think are important to addre
 
 ## To run the project locally
 
-To start a local development server, run:
+To start the project locally, run:
 
 ```bash
 npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+PS: You would also need to run this other project, which is the API that the ml-front-end consumes:
+
+https://github.com/kaleb22/ml-back-end
+
+Once the server is running, open your browser and navigate to `http://localhost:4200/`.
+
+You can search for products using this group of words: "tel", "telefone", "celular", "iphone", "cel", "apple", "telefono"
+
+Any other word would not have results associated in the API.
