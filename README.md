@@ -62,13 +62,19 @@ Regarding this theme, here are some thoughts that I think are important to addre
 
 ## To run the project locally
 
-To start the project locally, run:
+To start the project locally, first you need to run:
+
+```bash
+npm install
+```
+
+Then you can run:
 
 ```bash
 npm start
 ```
 
-PS: You would also need to run this other project, which is the API that the ml-front-end consumes:
+PS: You would also need to run this other project locally, which is the API that the ml-front-end consumes:
 
 https://github.com/kaleb22/ml-back-end
 
