@@ -1,0 +1,23 @@
+<div class="header">
+  <img src="/assets/Logo_ML.png" width="48px" height="32px" />
+
+  <div class="search-container">
+    <input
+      class="header__input"
+      name="search-bar"
+      type="text"
+      placeholder="Nunca dejes de buscar"
+      (keyup.enter)="search()"
+      [formControl]="input"
+    />
+    <button class="header__button">
+      <img
+        (click)="search()"
+        aria-label="click here to search for the term entered"
+        src="/assets/ic_Search.png"
+        width="16px"
+        height="16px"
+      />
+    </button>
+  </div>
+</div>
